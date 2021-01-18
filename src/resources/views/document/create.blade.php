@@ -6,7 +6,7 @@
 
 <body>
 
-<form action="/files" methode="POST" enctype="multipart/form-data">
+<form action="/files" method="POST" enctype="multipart/form-data">
     {{csrf_field()}}
     <input type="text" name="Dateiname" placeholder="Dateiname">
     <input type="text" name="Beschreibung" placeholder="Beschreibung">
