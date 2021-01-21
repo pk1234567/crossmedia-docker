@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Documents; 
 
 class DocumentController extends Controller
 {
@@ -13,7 +14,8 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        //
+        $file=Documents::all();
+        return view('admin.document.view', compact('file')); 
     }
 
     /**
@@ -34,7 +36,18 @@ class DocumentController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $data=new Documents;
+        if($request->file('file')){
+            $file=$request->file('file');
+            $filename=time().'.'.$file->getClientOriginalExtension();
+            $request->file->move('storage/'. $filename);
+            
+            $data->file= $filename;
+        }
+        $data->title=$request->title;
+        $data->description=$request->description;
+        $data->save();
+        return redirect()->back(); 
     }
 
     /**
