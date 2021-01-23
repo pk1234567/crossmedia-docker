@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('files/create','DocumentController@create');
 Route::post('files','DocumentController@store');
 Route::get('files','DocumentController@index');
-Route::get('/files/{id}','DocumentController@show');
+Route::get('files/{id}','DocumentController@show');
 
-Route::get('file/download/{file}','DocumentController@download');
+Route::get('file/download/{file}','DocumentController@download'); 
+
+
+ 

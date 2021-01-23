@@ -14,8 +14,8 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        $file=Documents::all();
-        return view('admin.document.view', compact('file')); 
+        =Documents::all();
+        return view('document.view',compact('file')); 
     }
 
     /**
