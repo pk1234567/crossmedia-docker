@@ -56,9 +56,12 @@ class DocumentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    
     public function show($id)
     {
-        //
+        $data=Documents::find($id);
+        return view('document.details',compact('data')); 
     }
 
     /**
@@ -67,9 +70,11 @@ class DocumentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+
+    
+    public function download($file)
     {
-        //
+        return response()->download('storage/' .$file);
     }
 
     /**
