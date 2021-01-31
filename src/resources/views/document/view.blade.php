@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-        }
+@extends('layouts.app')
 
-    </style>
-    <title>view</title>
-</head>
+@section('content')
 </body>
 
 <table>
@@ -31,4 +23,4 @@
 </table>
 
 </body>
-</html>
+@endsection

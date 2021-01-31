@@ -17,15 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('files/create','DocumentController@create');
-Route::post('files','DocumentController@store');
+Route::get('files/create','DocumentController@create')->name('create');
+Route::post('files','DocumentController@store')->name('view');
 Route::get('files','DocumentController@index');
 Route::get('files/{id}','DocumentController@show');
 
-Route::get('file/download/{file}','DocumentController@download'); 
+Route::get('file/download/{file}','DocumentController@download');
 
 
- 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
