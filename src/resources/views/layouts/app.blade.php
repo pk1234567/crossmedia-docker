@@ -63,16 +63,20 @@
                         @else
                             <li class="inactive">
                                 <a id="navbarDropdown" class="dropdown-toggle" href="#logout" role="button" data-toggle="collapse" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    Profil
                                 </a>
 
                             <ul class="collapse list-unstyled" id="logout">
                                 <li>
+                                <a id ="logout" class="dropdown-item" href="#">
+                                    Einstellungen
+                                    </a>
                                 <a id ="logout" class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
