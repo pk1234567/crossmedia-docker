@@ -5,9 +5,28 @@
     align-items: stretch;
 }
 
+table {
+    border: 1px solid rgb(224, 19, 156);
+    width: 80%;
+    border-collapse: collapse;
+    padding: 15px;
+    text-align: left;
+  }
+  tr:hover {background-color: rgb(243, 124, 203);}
+
+  th {
+    background-color: rgb(243, 124, 203);
+    border-bottom: 1px solid rgb(224, 19, 156);
+  }
+
+  td {
+    border-bottom: 1px solid rgb(224, 19, 156);
+  }
+
+
 #content {
-    min-width: 200vh;
-    max-width: 200vh;
+    min-width: 100%;
+    max-width: 100%;
     min-height: 100vh;
     background: #0d0e0f;
     color: rgb(224, 19, 156);
