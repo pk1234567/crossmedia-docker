@@ -39,7 +39,7 @@
         <ul class="list-unstyled components">
             <p>Asset Manager</p>
             <li class="inactive">
-                <a href="{{ route('view') }}">Dashboard</a>
+                <a href="{{ route('view') }}">Datei-Übersicht</a>
             </li>
             <li class= "inactive">
                 <a href="{{ route('create') }}">Upload</a>
