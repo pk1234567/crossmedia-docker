@@ -17,10 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('files/create','DocumentController@create')->name('create');
-Route::post('files','DocumentController@store')->name('view');
-Route::get('files','DocumentController@index');
-Route::get('files/{id}','DocumentController@show');
+Route::get('files/create','DocumentController@create')->name('create')->middleware('auth');
+Route::post('files','DocumentController@store')->name('view')->middleware('auth');
+Route::get('files','DocumentController@index')->middleware('auth');;
+Route::get('files/{id}','DocumentController@show')->middleware('auth');;
+Route::get('/profil', 'ProfilController@index')->name('profil')->middleware('auth');
+Route::get('/store', 'ProfilController@store')->name('store')->middleware('auth');
 
 Route::get('file/download/{file}','DocumentController@download');
 

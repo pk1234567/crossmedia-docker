@@ -68,7 +68,7 @@
 
                             <ul class="collapse list-unstyled" id="logout">
                                 <li>
-                                <a id ="logout" class="dropdown-item" href="#">
+                                <a id ="logout" class="dropdown-item" href="{{ route('profil') }}">
                                     Einstellungen
                                     </a>
                                 <a id ="logout" class="dropdown-item" href="{{ route('logout') }}"
