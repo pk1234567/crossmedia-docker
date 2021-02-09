@@ -2,7 +2,8 @@
 
 @section('content')
 </body>
-
+<h2>Alle Dateien</h2>
+<p class="sub">Hier sehen Sie alle Ihre Dateien.</p>
 <table>
     <tr>
     <th>Nr.</th>

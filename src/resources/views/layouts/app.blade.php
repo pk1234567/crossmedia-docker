@@ -42,7 +42,7 @@
                 <a href="{{ route('view') }}">Dashboard</a>
             </li>
             <li class= "inactive">
-                <a href="{{ route('create') }}">Uploads</a>
+                <a href="{{ route('create') }}">Upload</a>
             </li>
             <li class= "inactive">
                 <a href="#">Statistics</a>
