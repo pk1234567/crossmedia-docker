@@ -101,11 +101,33 @@ class DocumentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        /*
         $data=Documents::find($request->id);
         $data->title=$request->title;
         $data->description=$request->description;
         $data->save();
         return redirect('files');
+        */
+
+        $data = Documents::find($id); 
+
+        if (isset($request->title)){
+
+            $data->title = $request->title;
+        }
+
+        if (isset($request->description)){
+            $data->description = $request->description;
+        }
+
+        $data->save();
+
+        if (isset($request->editForm)){
+            return redirect()->route('document.files');
+        }
+       
+
+        
     }
 
     /**
