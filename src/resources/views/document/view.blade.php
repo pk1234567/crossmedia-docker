@@ -11,6 +11,8 @@
     <th>Beschreibung</th>
     <th>Vorschau</th>
     <th>Download</th>
+    <th>Bearbeiten </th>
+    <th>Löschen</th>
     </tr>
     @foreach($file as $key=>$data)
     <tr>
@@ -19,6 +21,8 @@
         <td>{{$data->description}} </td>
         <td><a href="/files/{{$data->id}}">Vorschau</a></td>
         <td><a href="/file/download/{{$data->file}}">Download</a></td>
+        <td><a href="/file/{{$data->id}}/edit">Bearbeiten</a></td>
+        <td><a href="/file/{{$data->id}}/delete">Löschen</a></td>
     </tr>
     @endforeach
 </table>

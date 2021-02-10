@@ -64,6 +64,7 @@ class DocumentController extends Controller
         return view('document.details',compact('data'));
     }
 
+
     /**
      * Show the form for editing the specified resource.
      *
