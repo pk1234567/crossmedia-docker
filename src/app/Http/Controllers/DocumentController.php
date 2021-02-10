@@ -105,7 +105,7 @@ class DocumentController extends Controller
         $data->title=$request->title;
         $data->description=$request->description;
         $data->save();
-        return redirect('view');
+        return redirect('files');
     }
 
     /**
