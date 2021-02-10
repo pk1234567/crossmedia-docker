@@ -78,6 +78,14 @@ class DocumentController extends Controller
         return response()->download('storage/' .$file);
     }
 
+    public function delete($id)
+    {
+        $data=Documents::find($id);
+        $data->delete();
+        return redirect('files');
+    }
+
+
     /**
      * Update the specified resource in storage.
      *

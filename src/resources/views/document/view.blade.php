@@ -21,8 +21,8 @@
         <td>{{$data->description}} </td>
         <td><a href="/files/{{$data->id}}">Vorschau</a></td>
         <td><a href="/file/download/{{$data->file}}">Download</a></td>
-        <td><a href="/file/{{$data->id}}/edit">Bearbeiten</a></td>
-        <td><a href="/file/{{$data->id}}/delete">Löschen</a></td>
+        <td><a href="/file/edit{{$data->id}}">Bearbeiten</a></td>
+        <td><a href="/file/delete{{$data->id}}">Löschen</a></td>
     </tr>
     @endforeach
 </table>
