@@ -85,6 +85,12 @@ class DocumentController extends Controller
         return redirect('files');
     }
 
+    public function edit($id)
+    {
+        $data=Documents::find($id);
+        return view ('document.edit',['data'=>$data]);        
+      
+    }
 
     /**
      * Update the specified resource in storage.
@@ -95,7 +101,11 @@ class DocumentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data=Documents::find($request->id);
+        $data->title=$request->title;
+        $data->description=$request->description;
+        $data->save();
+        return redirect('view');
     }
 
     /**
