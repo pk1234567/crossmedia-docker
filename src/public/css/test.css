@@ -8,7 +8,12 @@
 p.sub {
     margin-bottom: 2em;
 }
-
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 /* Dashboard */
 
 table {
