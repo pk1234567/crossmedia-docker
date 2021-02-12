@@ -5,7 +5,7 @@
     <h2>Asset-Titel: {{$data->title}}</h2>
     <p>Asset-Beschreibung: <br> {{$data->description}}</p>
     <p>
-        <img src="{{url('storage/' .$data->file)}}" style="width: 320px; height: 320px; margin-top: 3em;">
+        <iframe src="{{url('storage/' .$data->file)}}" style="width: 320px; height: 320px; margin-top: 3em;"></iframe>
     </p>
     <button class="btn btn-dark"><a href="/files" style="color: white">Zurück</a></button>
 </div>

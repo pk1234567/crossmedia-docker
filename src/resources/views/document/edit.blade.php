@@ -11,7 +11,7 @@
 {{ csrf_field() }}
 @method('PUT')
 <p>
-<img class="center" src="{{url('storage/' .$data->file)}}" style="width: 320px; height: 320px; position: center; margin-top: 3em;">
+<iframe class="center" src="{{url('storage/' .$data->file)}}" style="width: 320px; height: 320px; position: center; margin-top: 3em;"></iframe>
     </p>
 <input type="hidden" name="_method" value="PUT">
 
