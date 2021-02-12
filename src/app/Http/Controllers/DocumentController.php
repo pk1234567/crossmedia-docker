@@ -47,7 +47,7 @@ class DocumentController extends Controller
         $data->title=$request->title;
         $data->description=$request->description;
         $data->save();
-        return redirect()->back();
+        return redirect()->route('view');
     }
 
     /**
