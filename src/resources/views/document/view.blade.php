@@ -28,18 +28,16 @@
 </table>
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-4">
-            <h1>Dashboard</h1>
-            @foreach($file as $key=>$data)
-            <p>
-        <iframe src="{{url('storage/' .$data->file)}}" style="width: 320px; height: 320px; margin-top: 3em;"></iframe>
-    </p>
-    @endforeach
+<div class="row">
+<div class="col-sm-5 col-md-6">
+@foreach($file as $key=>$data)
+  <iframe src="{{url('storage/' .$data->file)}}" style="width: 320px; height: 320px; margin-top: 3em;"></iframe>
+  @endforeach
+  </div>
+  </div>
+  </div>
 
-        </div>
-    </div>
-</div>
+
 
 </body>
 @endsection
