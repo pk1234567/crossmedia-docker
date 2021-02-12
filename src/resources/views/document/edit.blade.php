@@ -6,11 +6,12 @@
 
 <div class="col-sm-8 col-sm-offset-2">
 
-<form action="{{ route('view', ['id'=>$data->id]) }}" method="POST">
+<form action="{{ route('update', ['id'=>$data->id]) }}" method="post">
 
 {{ csrf_field() }}
+@method('PUT')
 
-<input type="hidden" name="_method" value="POST">
+<input type="hidden" name="_method" value="PUT">
 
 <div class="form-group">
 <label for="title">Assetname </label>
@@ -19,7 +20,7 @@
 
 <div class="form-group">
 <label for="description">Beschreibung</label>
-<textarea name="body" id="" cols="30" rows="10" class="form-control">{{ $data->description}}</textarea>
+<textarea name="description" id="description" cols="30" rows="10" class="form-control">{{ $data->description}}</textarea>
 </div>
 
 <input type="hidden" name="editForm" value="editForm">

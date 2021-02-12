@@ -88,8 +88,8 @@ class DocumentController extends Controller
     public function edit($id)
     {
         $data=Documents::find($id);
-        return view ('document.edit',['data'=>$data]);        
-      
+        return view ('document.edit',['data'=>$data]);
+
     }
 
     /**
@@ -101,33 +101,28 @@ class DocumentController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
         /*
         $data=Documents::find($request->id);
         $data->title=$request->title;
         $data->description=$request->description;
         $data->save();
         return redirect('files');
+
         */
+        $data = Documents::find($id);
 
-        $data = Documents::find($id); 
-
-        if (isset($request->title)){
-
-            $data->title = $request->title;
-        }
-
-        if (isset($request->description)){
-            $data->description = $request->description;
-        }
+        $data->title = $request->input('title');
+        $data->description = $request->input('description');
 
         $data->save();
-
+        session()->flash('message', 'Asset erfolgreich bearbeitet');
         if (isset($request->editForm)){
-            return redirect()->route('document.files');
+            return redirect()->route('view');
         }
-       
 
-        
+
     }
 
     /**

@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('files/create','DocumentController@create')->name('create')->middleware('auth');
+Route::put('files/edit/{id}','DocumentController@update')->name('update')->middleware('auth');
 Route::post('files','DocumentController@store')->name('view')->middleware('auth');
 Route::get('files','DocumentController@index')->middleware('auth');;
 Route::get('files/{id}','DocumentController@show')->middleware('auth');;

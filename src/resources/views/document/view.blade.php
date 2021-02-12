@@ -28,4 +28,4 @@
 </table>
 
 </body>
-@endsection 
+@endsection
