@@ -1,14 +1,10 @@
 version: '3'
 
-networks:
-  laravel:
-
 services:
-  site:
-    build:
-      context: .
-      dockerfile: nginx.dockerfile
-    container_name: nginx
+  nginx:
+    image: crossmedia-nginx:latest
+    build: ./docker/nginx/
+    container_name: crossmedia-nginx
     ports:
       - "8080:80"
     volumes:
@@ -16,14 +12,11 @@ services:
     depends_on:
       - php
       - mysql
-    networks:
-      - laravel
 
   mysql:
-    image: mysql:5.7.29
-    container_name: mysql
-    restart: unless-stopped
-    tty: true
+    image: crossmedia-mysql:latest
+    build: ./docker/mysql/
+    container_name: crossmedia-mysql
     ports:
       - "4306:3306"
     environment:
@@ -31,59 +24,22 @@ services:
       MYSQL_USER: homestead
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
-    networks:
-      - laravel
-    volumes:
-      - ./mysql:/var/lib/mysql
 
   php:
-    build:
-      context: .
-      dockerfile: php.dockerfile
-    container_name: php
+    image: crossmedia-php:latest
+    build: ./docker/php/
+    container_name: crossmedia-php
     volumes:
       - ./src:/var/www/html:delegated
-    ports:
-      - "9000:9000"
-    networks:
-      - laravel
-
-  composer:
-    build:
-      context: .
-      dockerfile: composer.dockerfile
-    container_name: composer
-    volumes:
-      - ./src:/var/www/html
-    working_dir: /var/www/html
-    depends_on:
-      - php
-    user: laravel
-    networks:
-      - laravel
-    entrypoint: ['composer', '--ignore-platform-reqs']
-
-  npm:
-    image: node:13.7
-    container_name: npm
-    volumes:
-      - ./src:/var/www/html
-    working_dir: /var/www/html
-    entrypoint: ['npm']
 
   artisan:
-    build:
-      context: .
-      dockerfile: php.dockerfile
-    container_name: artisan
+    image: crossmedia-artisan:latest
+    build: ./docker/php/
+    container_name: crossmedia-artisan
     volumes:
       - ./src:/var/www/html:delegated
     depends_on:
       - mysql
     working_dir: /var/www/html
     user: laravel
-    entrypoint: ['php', '/var/www/html/artisan']
-    networks:
-      - laravel
+    entrypoint: [ 'php', '/var/www/html/artisan' ]
