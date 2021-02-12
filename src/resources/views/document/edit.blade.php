@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Assets bearbeiten Nr.{{ $data->id }}</h1>
+<h2>Asset bearbeiten Nr.{{ $data->id }}</h2>
 
 <div class="col-sm-8 col-sm-offset-2">
 
@@ -11,7 +11,7 @@
 {{ csrf_field() }}
 @method('PUT')
 <p>
-<img class="center" src="{{url('storage/' .$data->file)}}" style="width: 320px; height: 320px; position: center">
+<img class="center" src="{{url('storage/' .$data->file)}}" style="width: 320px; height: 320px; position: center; margin-top: 3em;">
     </p>
 <input type="hidden" name="_method" value="PUT">
 
@@ -29,8 +29,8 @@
 
 
 <button type="submit" class="btn btn-dark">Änderungen speichern</button>
+<button class="btn btn-dark back-button"><a href="{{ route ('view') }}">Zurück</a></button>
 
-<a href="{{ route ('view') }}" class="btn btn-dark">Zurück</a>
 </form>
 
 </div>

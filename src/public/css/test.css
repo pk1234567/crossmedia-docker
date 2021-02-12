@@ -13,7 +13,7 @@ p.sub {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-  }
+}
 /* Dashboard */
 
 table {
@@ -165,10 +165,19 @@ button {
     padding: 0.75em 1.75em !important;
     font-weight: bold !important;
     margin-top: 1.5em !important;
+    margin-right: 1em !important;
 }
 
 /* Login und Register */
 
 .card {
     background-color: #393a41 !important;
+}
+
+.back-button {
+    background-color: #393a41 !important;
+}
+
+.back-button a {
+    color: white !important;
 }
