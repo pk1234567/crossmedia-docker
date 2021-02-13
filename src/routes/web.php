@@ -35,3 +35,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('file/delete{id}', 'DocumentController@delete');
 Route::get('file/edit{id}', 'DocumentController@edit');
 Route::post('file/edit', 'DocumentController@update');
+
+
+
