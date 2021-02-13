@@ -2,11 +2,10 @@
 
 @section('content')
 
-
 </body>
 
-<h2>Alle Dateien</h2>
-<p class="sub">Hier sehen Sie alle Ihre Dateien.</p>
+<h2>Ihre Suchergebnisse</h2>
+<p class="sub">Hier sehen Sie alle Ergebnisse</p>
 
 <form class="form-inline my-2 my-lg-0" type="get" action=" {{ url('suche') }} ">
 <input class="form-control mr-sm-2" name="query" type="search" placeholder="Suche">

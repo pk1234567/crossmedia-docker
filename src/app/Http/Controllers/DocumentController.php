@@ -138,4 +138,11 @@ class DocumentController extends Controller
     {
         //
     }
+    public function suche(){
+
+        $search_text =$_GET['query'];
+        $file = Documents::where('title', 'LIKE', '%'.$search_text.'%')->get();
+
+        return view('document.search', compact('file'));
+    }
 }

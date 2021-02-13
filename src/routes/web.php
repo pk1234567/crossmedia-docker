@@ -24,7 +24,7 @@ Route::get('files','DocumentController@index')->middleware('auth');;
 Route::get('files/{id}','DocumentController@show')->middleware('auth');;
 Route::get('/profil', 'ProfilController@index')->name('profil')->middleware('auth');
 Route::get('/store', 'ProfilController@store')->name('store')->middleware('auth');
-
+Route::get('/suche', 'DocumentController@suche');
 Route::get('file/download/{file}','DocumentController@download');
 
 
