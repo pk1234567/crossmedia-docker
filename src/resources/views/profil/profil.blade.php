@@ -3,20 +3,22 @@
 @section('content')
 
 
-<div class= "col-md-9 col-lg-9 pull-right"></div>
-<h2>Neue Datei hochladen</h2>
-<p class="sub">Nenn mich Osama</p>
-
-<div class="card mb-2">
-<div class="card-header">Profileinstellungen</div>
-<div class="card-body">
-    <form action="/store" method="POST" enctype="multipart/form-data">
-    {{csrf_field()}}
-    <input type="file" name="file" style="padding: 2em 1em;">
-    <br>
-    <button type="submit" class="btn btn-dark" value="Hochladen">Hochladen</button>
-</form></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+        <img src="/uploads/avatars/{{ $user->avatar}}" 
+          style="width:150px; height:150px; float:left; border-radius:50%; 
+          margin-right: float:left; border-radius:50%; margin-right:25px;">
+        <h2>{{ $user->name }}'s Profilbereich</h2>
+        <form enctype="multipart/form-data" action="/store" method="POST">
+            <label>Profilbild hochladen</label>
+            <input type="file" name="avatar">
+            <input type="hidden" name="_token" value="{{ csrf_token()}}">
+            <input type="submit" class="pull-right btn btn-sm btn-primary">
+        </form>
+    </div>
 </div>
 
-</div>
+
+
 @endsection

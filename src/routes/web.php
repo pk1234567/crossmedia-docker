@@ -24,6 +24,7 @@ Route::get('files','DocumentController@index')->middleware('auth');;
 Route::get('files/{id}','DocumentController@show')->middleware('auth');;
 Route::get('/profil', 'ProfilController@index')->name('profil')->middleware('auth');
 Route::get('/store', 'ProfilController@store')->name('store')->middleware('auth');
+Route::post('/store', 'ProfilController@update_avatar');
 Route::get('/suche', 'DocumentController@suche');
 Route::get('file/download/{file}','DocumentController@download');
 
@@ -37,4 +38,6 @@ Route::get('file/edit{id}', 'DocumentController@edit');
 Route::post('file/edit', 'DocumentController@update');
 
 
-
+Route::get('/phpinfo', function() {
+    return phpinfo();
+});
