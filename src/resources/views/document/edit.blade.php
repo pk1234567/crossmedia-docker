@@ -25,6 +25,16 @@
 <textarea name="description" id="description" cols="30" rows="10" class="form-control">{{ $data->description}}</textarea>
 </div>
 
+<select name="kategorie" id="kategorie" placeholder="Kategorie auswählen">
+        <option value="" disabled selected>"{{ $data->kategorie }}"</option>
+        <option value="Architektur">Arschitektur</option>
+        <option value="Landschaft">Landschaft</option>
+        <option value="Menschen">Menschen & Gesellschaft</option>
+        <option value="Tiere">Tiere</option>
+        <option value="Meme">Meme</option>
+        <option value="Sonstige">Sonstige</option>
+        </select>
+
 <input type="hidden" name="editForm" value="editForm">
 
 
