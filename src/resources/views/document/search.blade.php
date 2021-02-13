@@ -19,6 +19,14 @@
   </div>
 <div>
 
+  <style>
+  form {
+    position: absolute;
+    top: 10em;
+    right: 9em;
+  }
+</style>
+
 <div class="list" id="liste">
 <table>
     <tr>

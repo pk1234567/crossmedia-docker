@@ -13,6 +13,14 @@
 <button class="btn btn-dark my-2 my-sm-0" type="submit">Suchen</button>
 </form>
 
+<style>
+  form {
+    position: absolute;
+    top: 10em;
+    right: 9em;
+  }
+</style>
+
 <div class="header">
   <div class="buttons">
     <button onClick="einblenden()" class="btn btn-dark" value="List" style="margin-bottom: 2em;">Listenansicht</button>
