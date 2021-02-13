@@ -27,6 +27,7 @@
     <th>Nr.</th>
     <th>Titel</th>
     <th>Beschreibung</th>
+    <th>Kategorie</th>
     <th>Vorschau</th>
     <th>Download</th>
     <th>Bearbeiten </th>
@@ -37,6 +38,7 @@
         <td>{{++$key}}</td>
         <td>{{$data->title}}</td>
         <td>{{$data->description}} </td>
+        <td>{{$data->kategorie}} </td>
         <td><a href="/files/{{$data->id}}">Vorschau</a></td>
         <td><a href="/file/download/{{$data->file}}">Download</a></td>
         <td><a href="/file/edit{{$data->id}}">Bearbeiten</a></td>
