@@ -47,21 +47,11 @@ class DocumentController extends Controller
 
         $filetype = pathinfo($filename, PATHINFO_EXTENSION);
         $data->filetype=$filetype;
-<<<<<<< Updated upstream
-        $data->kategorie=$request->kategorie;
-=======
 
-        // $filesize = filesize($data);
-
-        // $image = new Imagick('store/', $filename);
-        // echo $image;
-
->>>>>>> Stashed changes
         $data->title=$request->title;
         $data->description=$request->description;
         $data->save();
-        // return redirect()->route('view');
-        echo $filesize($data);
+        return redirect()->route('view');
 
     }
 
