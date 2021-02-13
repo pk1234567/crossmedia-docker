@@ -33,10 +33,11 @@ Route::get('file/download/{file}','DocumentController@download');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('file/delete{id}', 'DocumentController@delete');
-Route::get('file/edit{id}', 'DocumentController@edit');
+Route::get('file/delete/{id}', 'DocumentController@delete');
+Route::get('file/edit/{id}', 'DocumentController@edit');
 Route::post('file/edit', 'DocumentController@update');
 
+Route::get('file/download-as-cmyk/{id}', 'DocumentController@downloadAsCMYK');
 
 Route::get('/phpinfo', function() {
     return phpinfo();

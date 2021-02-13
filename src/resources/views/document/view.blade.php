@@ -37,8 +37,10 @@
     <th>Kategorie</th>
     <th>Vorschau</th>
     <th>Download</th>
-    <th>Bearbeiten </th>
+    <th>Bearbeiten</th>
     <th>Löschen</th>
+    <th>cmyk</th>
+    <th>filesize</th>
     </tr>
     @foreach($file as $key=>$data)
     <tr>
@@ -48,8 +50,10 @@
         <td>{{$data->kategorie}} </td>
         <td><a href="/files/{{$data->id}}">Vorschau</a></td>
         <td><a href="/file/download/{{$data->file}}">Download</a></td>
-        <td><a href="/file/edit{{$data->id}}">Bearbeiten</a></td>
-        <td><a href="/file/delete{{$data->id}}">Löschen</a></td>
+        <td><a href="/file/edit/{{$data->id}}">Bearbeiten</a></td>
+        <td><a href="/file/delete/{{$data->id}}">Löschen</a></td>
+        <td><a href="/file/download-as-cmyk/{{$data->id}}">CMYK</a></td>
+        <td>{{$data->filesize/1000000}} mb</td>
     </tr>
     @endforeach
 </table>
