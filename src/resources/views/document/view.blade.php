@@ -41,23 +41,23 @@
 <div class="container">
 <div class="row" id="grid">
 <div class="col-12">
-<div id="column1"
+<div id="column1">
     @foreach($file as $key=>$data)
     <iframe src="{{url('storage/' .$data->file)}}" style="width: 320px; height: 320px; margin-top: 3em; padding: 5%;"></iframe>
     @endforeach
     </div>
-
-
+    </div>
+    </div>
 </div>
-    
 
-<script> 
+
+<script>
   function gridopen2(){
     document.getElementById("column1").style.width="50%";
     document.getElementById("column2").style.width="50%";
     document.getElementById("column3").style.width="50%";
     document.getElementById("column4").style.width="50%";
-  
+
 
   }
 
@@ -66,7 +66,7 @@
     document.getElementById("column2").style.width="100%";
     document.getElementById("column3").style.width="100%";
     document.getElementById("column4").style.width="100%";
-  
+
   }
 
 
