@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 </body>
 
 <h2>Alle Dateien</h2>
@@ -10,12 +11,13 @@
 <div class="header">
   <p> Klicke auf die Buttons, um die Ansicht zu ändern.</p>
   <div class="buttons">
-    <button onClick="gridopen2()" class="btn btn-dark" value="List">Listenansicht </button>
-    <button onClick="gridopen()" class="btn btn-dark" value="Grid">Kachelansicht</button>
+    <button onClick="einblenden()" class="btn btn-dark" value="List">Listenansicht </button>
+    <button onClick="ausblenden()" class="btn btn-dark" value="Grid">Kachelansicht</button>
   </div>
 <div>
 
-<table ip="list">
+<div class="list" id="liste">
+<table>
     <tr>
     <th>Nr.</th>
     <th>Titel</th>
@@ -37,6 +39,7 @@
     </tr>
     @endforeach
 </table>
+</div>
 
 <div class="container">
 <div class="row" id="grid">
@@ -51,27 +54,19 @@
 </div>
 
 
-<script>
-  function gridopen2(){
-    document.getElementById("column1").style.width="50%";
-    document.getElementById("column2").style.width="50%";
-    document.getElementById("column3").style.width="50%";
-    document.getElementById("column4").style.width="50%";
+<script type="text/javascript">
 
+document.getElementById('grid').style.display='none';
 
+  function einblenden() {
+    document.getElementById('liste').style.display='block';
+    document.getElementById('grid').style.display='none';
   }
-
-  function gridopen(){
-    document.getElementById("column1").style.width="100%";
-    document.getElementById("column2").style.width="100%";
-    document.getElementById("column3").style.width="100%";
-    document.getElementById("column4").style.width="100%";
-
+  
+  function ausblenden() {
+    document.getElementById('liste').style.display='none';
+    document.getElementById('grid').style.display='block';
   }
-
-
-
-
 
 </script>
 
