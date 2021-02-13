@@ -14,6 +14,7 @@
 
 
         <select name="kategorie" id="kategorie" placeholder="Kategorie auswählen">
+        <option value="" disabled selected>Kategorie auswählen</option>
         <option value="Architektur">Arschitektur</option>
         <option value="Landschaft">Landschaft</option>
         <option value="Menschen">Menschen & Gesellschaft</option>
