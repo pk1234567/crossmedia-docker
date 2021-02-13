@@ -54,7 +54,13 @@
 </div>
 
 
+<<<<<<< HEAD
 <script type="text/javascript">
+=======
+<script>
+  function gridopen2(){
+    document.getElementById("column1").style.width="50%";
+>>>>>>> main
 
 document.getElementById('grid').style.display='none';
 
@@ -62,10 +68,18 @@ document.getElementById('grid').style.display='none';
     document.getElementById('liste').style.display='block';
     document.getElementById('grid').style.display='none';
   }
+<<<<<<< HEAD
   
   function ausblenden() {
     document.getElementById('liste').style.display='none';
     document.getElementById('grid').style.display='block';
+=======
+
+  function gridopen(){
+    document.getElementById("column1").style.width="100%";
+
+
+>>>>>>> main
   }
 
 </script>

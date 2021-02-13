@@ -41,9 +41,12 @@ class DocumentController extends Controller
             $file=$request->file('file');
             $filename=time().'.'.$file->getClientOriginalExtension();
             $request->file->move('storage/', $filename);
-
             $data->file= $filename;
         }
+
+        $filetype = pathinfo($filename, PATHINFO_EXTENSION);
+        $data->filetype=$filetype;
+        $data->kategorie=$request->kategorie;
         $data->title=$request->title;
         $data->description=$request->description;
         $data->save();
