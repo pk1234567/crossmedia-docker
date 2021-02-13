@@ -46,7 +46,7 @@ class DocumentController extends Controller
 
         $filetype = pathinfo($filename, PATHINFO_EXTENSION);
         $data->filetype=$filetype;
-
+        $data->kategorie=$request->kategorie;
         $data->title=$request->title;
         $data->description=$request->description;
         $data->save();

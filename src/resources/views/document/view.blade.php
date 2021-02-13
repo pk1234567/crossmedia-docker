@@ -54,18 +54,13 @@
 <script>
   function gridopen2(){
     document.getElementById("column1").style.width="50%";
-    document.getElementById("column2").style.width="50%";
-    document.getElementById("column3").style.width="50%";
-    document.getElementById("column4").style.width="50%";
 
 
   }
 
   function gridopen(){
     document.getElementById("column1").style.width="100%";
-    document.getElementById("column2").style.width="100%";
-    document.getElementById("column3").style.width="100%";
-    document.getElementById("column4").style.width="100%";
+
 
   }
 
