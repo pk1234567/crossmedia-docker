@@ -43,7 +43,10 @@ class DocumentController extends Controller
             $filename=time().'.'.$file->getClientOriginalExtension();
             $request->file->move('storage/', $filename);
             $data->file= $filename;
+            $data->filesize=$file->getSize();
         }
+
+        // $request->file('file')->getSize();
 
         $filetype = pathinfo($filename, PATHINFO_EXTENSION);
         $data->filetype=$filetype;
@@ -146,5 +149,15 @@ class DocumentController extends Controller
         $file = Documents::where('title', 'LIKE', '%'.$search_text.'%')->get();
 
         return view('document.search', compact('file'));
+    }
+
+
+    public function downloadAsCMYK($id){
+        $data=Documents::find($id);
+        $image = new \Imagick('storage/'.$data->file);
+        $image->transformImageColorspace(\Imagick::COLORSPACE_CMYK);
+        // $image->writeImage('storage/'.$filename);
+        return response((string)$image, 200)
+            ->header('Content-Disposition', 'attachment; filename='.$data->file);
     }
 }

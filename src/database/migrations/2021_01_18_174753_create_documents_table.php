@@ -20,6 +20,7 @@ class CreateDocumentsTable extends Migration
             $table->string('file')->nullable();
             $table->string('filetype')->nullable();
             $table->string('kategorie')->nullable();
+            $table->integer('filesize')->nullable();
             $table->timestamps();
         });
     }
