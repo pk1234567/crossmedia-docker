@@ -1,5 +1,16 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+/* Fonts */
+* {
+    font-family: "Poppins" !important;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Nunito" i !important;
+}
+
 .wrapper {
     display: flex;
     align-items: stretch;
@@ -146,7 +157,7 @@ ul ul a {
 }
 
 #logout {
-    color: rgb(236, 207, 227);
+    color: #eccfe3;
     background: #393a41;
 }
 

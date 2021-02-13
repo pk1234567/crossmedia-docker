@@ -13,10 +13,9 @@
 </form>
 
 <div class="header">
-  <p> Klicke auf die Buttons, um die Ansicht zu ändern.</p>
   <div class="buttons">
-    <button onClick="einblenden()" class="btn btn-dark" value="List">Listenansicht </button>
-    <button onClick="ausblenden()" class="btn btn-dark" value="Grid">Kachelansicht</button>
+    <button onClick="einblenden()" class="btn btn-dark" value="List" style="margin-bottom: 2em;">Listenansicht </button>
+    <button onClick="ausblenden()" class="btn btn2 btn-dark" value="Grid" style="margin-bottom: 2em;">Kachelansicht</button>
   </div>
 <div>
 
@@ -75,6 +74,13 @@ document.getElementById('grid').style.display='none';
   }
 
 </script>
+
+<style>
+  .btn2 {
+    background-color: #393a41 !important;
+    color: #eccfe3 !important;
+  }
+</style>
 
 </body>
 
