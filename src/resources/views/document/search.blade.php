@@ -33,7 +33,8 @@
     <th>Nr.</th>
     <th>Titel</th>
     <th>Beschreibung</th>
-    <th>Kategory</th>
+    <th>Kategorie</th>
+    <th>Filetype</th>
     <th>Vorschau</th>
     <th>Download</th>
     <th>Bearbeiten </th>
@@ -45,6 +46,7 @@
         <td>{{$data->title}}</td>
         <td>{{$data->description}} </td>
         <td>{{$data->kategorie}} </td>
+        <td>{{$data->filetype}} </td>
         <td><a href="/files/{{$data->id}}">Vorschau</a></td>
         <td><a href="/file/download/{{$data->file}}">Download</a></td>
         <td><a href="/file/edit{{$data->id}}">Bearbeiten</a></td>
@@ -66,8 +68,15 @@
     </div>
 </div>
 
+<select class ="form-control filter-select" name="filterkategorie" id="fkategorie" >
+        <option value="" disabled selected>Nach Kategorien Filtern</option>
+       @foreach ($file as $key=>$data)
+        <option value={{ $data->kategorie }}>{{ $data->kategorie }}</option>
+        @endforeach
+        </select>
 
-<script type="text/javascript">
+
+<script>
 
 document.getElementById('grid').style.display='none';
 

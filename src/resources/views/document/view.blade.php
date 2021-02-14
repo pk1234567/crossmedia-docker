@@ -5,14 +5,6 @@
 
 </body>
 
-<h2>Alle Dateien</h2>
-<p class="sub">Hier sehen Sie alle Ihre Dateien.</p>
-
-<form class="form-inline my-2 my-lg-0" type="get" action=" {{ url('suche') }} ">
-<input class="form-control mr-sm-2" name="query" type="search" placeholder="Suche">
-<button class="btn btn-dark my-2 my-sm-0" type="submit">Suchen</button>
-</form>
-
 <style>
   form {
     position: absolute;
@@ -20,6 +12,14 @@
     right: 9em;
   }
 </style>
+
+<h2>Alle Dateien</h2>
+<p class="sub">Hier sehen Sie alle Ihre Dateien.</p>
+
+<form class="form-inline my-2 my-lg-0" type="get" action=" {{ url('suche') }} ">
+<input class="form-control mr-sm-2" name="query" type="search" placeholder="Suche">
+<button class="btn btn-dark my-2 my-sm-0" type="submit">Suchen</button>
+</form>
 
 <div class="header">
   <div class="buttons">
@@ -35,6 +35,7 @@
     <th>Titel</th>
     <th>Beschreibung</th>
     <th>Kategorie</th>
+    <th>Filetype</th>
     <th>Vorschau</th>
     <th>Download</th>
     <th>Bearbeiten</th>
@@ -48,6 +49,7 @@
         <td>{{$data->title}}</td>
         <td>{{$data->description}} </td>
         <td>{{$data->kategorie}} </td>
+        <td>{{$data->filetype}} </td>
         <td><a href="/files/{{$data->id}}">Vorschau</a></td>
         <td><a href="/file/download/{{$data->file}}">Download</a></td>
         <td><a href="/file/edit/{{$data->id}}">Bearbeiten</a></td>
@@ -71,7 +73,7 @@
     </div>
 </div>
 
-
+{{ $file->links()}}
 <script type="text/javascript">
 
 document.getElementById('grid').style.display='none';

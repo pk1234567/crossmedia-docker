@@ -15,6 +15,7 @@ class DocumentController extends Controller
     public function index()
     {
         $file=Documents::all();
+        $file=Documents::paginate(10);
         return view('document.view',compact('file'));
     }
 
@@ -160,4 +161,12 @@ class DocumentController extends Controller
         return response((string)$image, 200)
             ->header('Content-Disposition', 'attachment; filename='.$data->file);
     }
+
+    public function filtern(){
+        $file = Documents::all();
+        $filetype = $data->sortBy('filetype')->pluck('filetype')->unique();
+        $kategorie = $data->sortBy('kategorie')->pluck('kategorie')->unique();
+
+        return view('document.search', compact('filetype', 'kategorie'));
+}
 }
