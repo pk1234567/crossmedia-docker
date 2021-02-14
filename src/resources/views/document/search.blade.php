@@ -7,7 +7,7 @@
 <h2>Ihre Suchergebnisse</h2>
 <p class="sub">Hier sehen Sie alle Ergebnisse</p>
 
-<form class="form-inline my-2 my-lg-0" type="get" action=" {{ url('suche') }} ">
+<form class="form-inline my-2 my-lg-0" id='suche' type="get" action=" {{ url('suche') }} ">
 <input class="form-control mr-sm-2" name="query" type="search" placeholder="Suche">
 <button class="btn btn-dark my-2 my-sm-0" type="submit">Suchen</button>
 </form>
@@ -20,7 +20,7 @@
 <div>
 
   <style>
-  form {
+  #suche {
     position: absolute;
     top: 10em;
     right: 9em;
@@ -68,14 +68,23 @@
     </div>
 </div>
 
-<select class ="form-control filter-select" name="filterkategorie" id="fkategorie" >
+<div class="container" name='filter'>
+<form class="form-inline" id='filter' method="GET">
+<select class ="form-control filter-select" name="query" id="query" >
         <option value="" disabled selected>Nach Kategorien Filtern</option>
        @foreach ($file as $key=>$data)
-        <option value={{ $data->kategorie }}>{{ $data->kategorie }}</option>
+        <option name='query' value={{ $data->kategorie }}>{{ $data->kategorie }}</option>
         @endforeach
         </select>
-
-
+        <select class ="form-control filter-select" name="query" id="query" >
+        <option value="" disabled selected>Nach Filetypen Filtern</option>
+       @foreach ($file as $key=>$data)
+        <option name='query' value={{ $data->filetype }}>{{ $data->filetype }}</option>
+        @endforeach
+        </select>
+        <button type="submit" class="btn btn-dark mb-2">Filtern</button>
+        </form>
+        </div>
 <script>
 
 document.getElementById('grid').style.display='none';

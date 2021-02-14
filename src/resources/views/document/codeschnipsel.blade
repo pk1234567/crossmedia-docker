@@ -1,0 +1,43 @@
+        $file = Documents::all();
+        $filetype = $file->sortBy('filetype')->pluck('filetype')->unique();
+        $kategorie = $file->sortBy('kategorie')->pluck('kategorie')->unique();
+
+<div class="container" name='filter'>
+<form class="form-inline" id='filter' method="GET">
+<select class ="form-control filter-select" name="query" id="query" >
+        <option value="" disabled selected>Nach Kategorien Filtern</option>
+       @foreach ($kategorie as $file)
+        <option name='query' value={{ $data->kategorie }}>{{ $data->kategorie }}</option>
+        @endforeach
+        </select>
+        <select class ="form-control filter-select" name="query" id="query" >
+        <option value="" disabled selected>Nach Filetypen Filtern</option>
+       @foreach ($filetype as $file)
+        <option name='query' value={{ $data->filetype }}>{{ $data->filetype }}</option>
+        @endforeach
+        </select>
+        <button type="submit" class="btn btn-dark mb-2">Filtern</button>
+        </form>
+        </div>
+
+<div class="container" name='filter'>
+<form class="form-inline" id='filter' method="GET">
+<select class ="form-control filter-select" name="query" id="query" >
+        <option value="" disabled selected>Nach Kategorien Filtern</option>
+       @foreach ($kategorie as $file)
+        <option name='query' value={{ $data->kategorie }}>{{ $data->kategorie }}</option>
+        @endforeach
+        </select>
+        <select class ="form-control filter-select" name="query" id="query" >
+        <option value="" disabled selected>Nach Filetypen Filtern</option>
+       @foreach ($filetype as $file)
+        <option name='query' value={{ $data->filetype }}>{{ $data->filetype }}</option>
+        @endforeach
+        </select>
+        <button type="submit" class="btn btn-dark mb-2">Filtern</button>
+        </form>
+        </div>
+
+                $file = Documents::all();
+        $filetype = $file->sortBy('filetype')->pluck('filetype')->unique();
+        $kategorie = $file->sortBy('kategorie')->pluck('kategorie')->unique();

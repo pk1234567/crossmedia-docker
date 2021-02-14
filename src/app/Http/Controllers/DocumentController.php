@@ -14,6 +14,7 @@ class DocumentController extends Controller
      */
     public function index()
     {
+
         $file=Documents::all();
         $file=Documents::paginate(10);
         return view('document.view',compact('file'));
@@ -147,9 +148,14 @@ class DocumentController extends Controller
     public function suche(){
 
         $search_text =$_GET['query'];
-        $file = Documents::where('title', 'LIKE', '%'.$search_text.'%')->get();
+
+        $file = Documents::where('title', 'LIKE', '%'.$search_text.'%')
+                            ->orwhere('description', 'LIKE', '%'.$search_text.'%')
+                            ->orwhere('kategorie', 'LIKE', '%'.$search_text.'%')
+                            ->orwhere('filetype', 'LIKE', '%'.$search_text.'%')->get();
 
         return view('document.search', compact('file'));
+
     }
 
 
@@ -164,9 +170,10 @@ class DocumentController extends Controller
 
     public function filtern(){
         $file = Documents::all();
-        $filetype = $data->sortBy('filetype')->pluck('filetype')->unique();
-        $kategorie = $data->sortBy('kategorie')->pluck('kategorie')->unique();
+        $filetype = $file->sortBy('filetype')->pluck('filetype')->unique();
+        $kategorie = $file->sortBy('kategorie')->pluck('kategorie')->unique();
 
         return view('document.search', compact('filetype', 'kategorie'));
 }
+
 }

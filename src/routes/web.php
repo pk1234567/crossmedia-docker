@@ -20,13 +20,14 @@ Route::get('/', function () {
 Route::get('files/create','DocumentController@create')->name('create')->middleware('auth');
 Route::put('files/edit/{id}','DocumentController@update')->name('update')->middleware('auth');
 Route::post('files','DocumentController@store')->name('view')->middleware('auth');
-Route::get('files','DocumentController@index')->middleware('auth');;
-Route::get('files/{id}','DocumentController@show')->middleware('auth');;
+Route::get('files','DocumentController@index')->middleware('auth');
+Route::get('files/{id}','DocumentController@show')->middleware('auth');
 Route::get('/profil', 'ProfilController@index')->name('profil')->middleware('auth');
 Route::get('/store', 'ProfilController@store')->name('store')->middleware('auth');
 Route::post('/store', 'ProfilController@update_avatar');
 Route::get('/suche', 'DocumentController@suche');
 Route::get('file/download/{file}','DocumentController@download');
+
 
 
 
