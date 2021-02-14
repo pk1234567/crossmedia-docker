@@ -29,16 +29,17 @@
 
 <div class="list" id="liste">
 <table>
-    <tr>
+<tr>
     <th>Nr.</th>
     <th>Titel</th>
     <th>Beschreibung</th>
     <th>Kategorie</th>
     <th>Filetype</th>
     <th>Vorschau</th>
-    <th>Download</th>
-    <th>Bearbeiten </th>
+    <th>Bearbeiten</th>
     <th>Löschen</th>
+    <th>filesize</th>
+    <th></th>
     </tr>
     @foreach($file as $key=>$data)
     <tr>
@@ -48,9 +49,31 @@
         <td>{{$data->kategorie}} </td>
         <td>{{$data->filetype}} </td>
         <td><a href="/files/{{$data->id}}">Vorschau</a></td>
-        <td><a href="/file/download/{{$data->file}}">Download</a></td>
-        <td><a href="/file/edit{{$data->id}}">Bearbeiten</a></td>
-        <td><a href="/file/delete{{$data->id}}">Löschen</a></td>
+        <td><a href="/file/edit/{{$data->id}}">Bearbeiten</a></td>
+        <td><a href="/file/delete/{{$data->id}}">Löschen</a></td>
+        <td>{{$data->filesize/1000000}} mb</td>
+        <td>
+            @if($data->filetype == 'jpg')
+                <a href="/file/download/{{$data->file}}" class="ml-2">🡻</a>
+                <a href="/file/download-as-cmyk/{{$data->id}}" class="ml-2">🡣 CMYK</a>
+                <a href="/file/download-as-png/{{$data->id}}" class="ml-2">🡣 PNG</a>
+                <a href="/file/download-as-gif/{{$data->id}}" class="ml-2">🡣 GIF</a>
+            @elseif($data->filetype == 'png')
+                <a href="/file/download/{{$data->file}}" class="ml-2">🡻</a>
+                <a href="/file/download-as-cmyk/{{$data->id}}" class="ml-2">🡣 CMYK</a>
+                <a href="/file/download-as-jpeg/{{$data->id}}" class="ml-2">🡣 JPEG</a>
+                <a href="/file/download-as-gif/{{$data->id}}" class="ml-2">🡣 GIF</a>
+            @elseif($data->filetype == 'gif')
+                    <a href="/file/download/{{$data->file}}" class="ml-2">🡻</a>
+                    <a href="/file/download-as-cmyk/{{$data->id}}" class="ml-2">🡣 CMYK</a>
+                    <a href="/file/download-as-jpeg/{{$data->id}}" class="ml-2">🡣 JPEG</a>
+                    <a href="/file/download-as-png/{{$data->id}}" class="ml-2">🡣 PNG</a>
+            @else
+                <a href="/file/download/{{$data->file}}" class="ml-2">🡻</a>
+            @endif
+        </td>
+
+        {{-- <td><a href="/file/download-as-cmyk/{{$data->id}}">CMYK</a></td> --}}
     </tr>
     @endforeach
 </table>
@@ -72,15 +95,22 @@
 <form class="form-inline" id='filter' method="GET">
 <select class ="form-control filter-select" name="query" id="query" >
         <option value="" disabled selected>Nach Kategorien Filtern</option>
-       @foreach ($file as $key=>$data)
-        <option name='query' value={{ $data->kategorie }}>{{ $data->kategorie }}</option>
-        @endforeach
+        <option name= "query" value="Architektur">Arschitektur</option>
+        <option name= "query" value="Landschaft">Landschaft</option>
+        <option name= "query" value="Menschen">Menschen & Gesellschaft</option>
+        <option name= "query" value="Tiere">Tiere</option>
+        <option name= "query" value="Meme">Meme</option>
+        <option name= "query" value="Sonstige">Sonstige</option>
         </select>
         <select class ="form-control filter-select" name="query" id="query" >
         <option value="" disabled selected>Nach Filetypen Filtern</option>
-       @foreach ($file as $key=>$data)
-        <option name='query' value={{ $data->filetype }}>{{ $data->filetype }}</option>
-        @endforeach
+        <option name= "query" value="png">.PNG</option>
+        <option name= "query" value="jpg">.JPG</option>
+        <option name= "query" value="jpeg">.JPEG</option>
+        <option name= "query" value="mp4">.MP4</option>
+        <option name= "query" value="gif">.GIF</option>
+        <option name= "query" value="pdf">.PDF</option>
+        <option name= "query" value="Sonstige">Sonstige</option>
         </select>
         <button type="submit" class="btn btn-dark mb-2">Filtern</button>
         </form>
