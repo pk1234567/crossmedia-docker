@@ -39,6 +39,9 @@ Route::get('file/edit/{id}', 'DocumentController@edit');
 Route::post('file/edit', 'DocumentController@update');
 
 Route::get('file/download-as-cmyk/{id}', 'DocumentController@downloadAsCMYK');
+Route::get('file/download-as-png/{id}', 'DocumentController@downloadAsPNG');
+Route::get('file/download-as-gif/{id}', 'DocumentController@downloadAsGIF');
+Route::get('file/download-as-jpeg/{id}', 'DocumentController@downloadAsJPEG');
 
 Route::get('/phpinfo', function() {
     return phpinfo();

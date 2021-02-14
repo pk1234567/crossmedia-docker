@@ -7,11 +7,7 @@ use App\Documents;
 
 class DocumentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
 
@@ -20,22 +16,13 @@ class DocumentController extends Controller
         return view('document.view',compact('file'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('document.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $data=new Documents;
@@ -60,13 +47,6 @@ class DocumentController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
 
     public function show($id)
     {
@@ -75,18 +55,11 @@ class DocumentController extends Controller
     }
 
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-
     public function download($file)
     {
         return response()->download('storage/' .$file);
     }
+
 
     public function delete($id)
     {
@@ -95,31 +68,22 @@ class DocumentController extends Controller
         return redirect('files');
     }
 
+
     public function edit($id)
     {
         $data=Documents::find($id);
         return view ('document.edit',['data'=>$data]);
-
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-
-
         /*
         $data=Documents::find($request->id);
         $data->title=$request->title;
         $data->description=$request->description;
         $data->save();
         return redirect('files');
-
         */
         $data = Documents::find($id);
 
@@ -131,22 +95,16 @@ class DocumentController extends Controller
         if (isset($request->editForm)){
             return redirect()->route('view');
         }
-
-
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         //
     }
-    public function suche(){
 
+
+    public function suche(){
         $search_text =$_GET['query'];
 
         $file = Documents::where('title', 'LIKE', '%'.$search_text.'%')
@@ -168,12 +126,41 @@ class DocumentController extends Controller
             ->header('Content-Disposition', 'attachment; filename='.$data->file);
     }
 
+
+    public function downloadAsPNG($id){
+        $data=Documents::find($id);
+        $image = new \Imagick('storage/'.$data->file);
+        $image->transformImageColorspace(\Imagick::INTERLACE_PNG);
+        return response((string)$image, 200)
+            ->header('Content-Disposition', 'attachment; filename='.$data->file);
+    }
+
+
+    public function downloadAsGIF($id){
+        $data=Documents::find($id);
+        $image = new \Imagick('storage/'.$data->file);
+        $image->setImageFormat("gif");
+        header("Content-type: image/gif");
+        return response((string)$image, 200)
+            ->header('Content-Disposition', 'attachment; filename='.$data->title.'.gif');
+    }
+
+
+    public function downloadAsJPEG($id){
+        $data=Documents::find($id);
+        $image = new \Imagick('storage/'.$data->file);
+        $image->setImageFormat("jpg");
+        header("Content-type: image/jpg");
+        return response((string)$image, 200)
+            ->header('Content-Disposition', 'attachment; filename='.$data->title.'.jpg');
+    }
+
     public function filtern(){
         $file = Documents::all();
         $filetype = $file->sortBy('filetype')->pluck('filetype')->unique();
         $kategorie = $file->sortBy('kategorie')->pluck('kategorie')->unique();
 
         return view('document.search', compact('filetype', 'kategorie'));
+    }
 }
 
-}

@@ -27,7 +27,7 @@
     <button onClick="ausblenden()" class="btn2 btn btn-dark" value="Grid" style="margin-bottom: 2em;">Kachelansicht</button>
   </div>
 <div>
-
+    <i class="fas fa-arrow-alt-circle-down"></i>
 <div class="list" id="liste">
 <table>
     <tr>
@@ -37,11 +37,10 @@
     <th>Kategorie</th>
     <th>Filetype</th>
     <th>Vorschau</th>
-    <th>Download</th>
     <th>Bearbeiten</th>
     <th>Löschen</th>
-    <th>cmyk</th>
     <th>filesize</th>
+    <th></th>
     </tr>
     @foreach($file as $key=>$data)
     <tr>
@@ -51,11 +50,31 @@
         <td>{{$data->kategorie}} </td>
         <td>{{$data->filetype}} </td>
         <td><a href="/files/{{$data->id}}">Vorschau</a></td>
-        <td><a href="/file/download/{{$data->file}}">Download</a></td>
         <td><a href="/file/edit/{{$data->id}}">Bearbeiten</a></td>
         <td><a href="/file/delete/{{$data->id}}">Löschen</a></td>
-        <td><a href="/file/download-as-cmyk/{{$data->id}}">CMYK</a></td>
         <td>{{$data->filesize/1000000}} mb</td>
+        <td>
+            @if($data->filetype == 'jpg')
+                <a href="/file/download/{{$data->file}}" class="ml-2">🡻</a>
+                <a href="/file/download-as-cmyk/{{$data->id}}" class="ml-2">🡣 CMYK</a>
+                <a href="/file/download-as-png/{{$data->id}}" class="ml-2">🡣 PNG</a>
+                <a href="/file/download-as-gif/{{$data->id}}" class="ml-2">🡣 GIF</a>
+            @elseif($data->filetype == 'png')
+                <a href="/file/download/{{$data->file}}" class="ml-2">🡻</a>
+                <a href="/file/download-as-cmyk/{{$data->id}}" class="ml-2">🡣 CMYK</a>
+                <a href="/file/download-as-jpeg/{{$data->id}}" class="ml-2">🡣 JPEG</a>
+                <a href="/file/download-as-gif/{{$data->id}}" class="ml-2">🡣 GIF</a>
+            @elseif($data->filetype == 'gif')
+                    <a href="/file/download/{{$data->file}}" class="ml-2">🡻</a>
+                    <a href="/file/download-as-cmyk/{{$data->id}}" class="ml-2">🡣 CMYK</a>
+                    <a href="/file/download-as-jpeg/{{$data->id}}" class="ml-2">🡣 JPEG</a>
+                    <a href="/file/download-as-png/{{$data->id}}" class="ml-2">🡣 PNG</a>
+            @else
+                <a href="/file/download/{{$data->file}}" class="ml-2">🡻</a>
+            @endif
+        </td>
+
+        {{-- <td><a href="/file/download-as-cmyk/{{$data->id}}">CMYK</a></td> --}}
     </tr>
     @endforeach
 </table>
