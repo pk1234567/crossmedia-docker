@@ -49,7 +49,7 @@
         <td>{{$data->description}} </td>
         <td>{{$data->kategorie}} </td>
         <td>{{$data->filetype}} </td>
-        <td><a href="/files/{{$data->id}}">Vorschau</a></td>
+        <td><a href="/files/{{$data->id}}">Details</a></td>
         <td><a href="/file/edit/{{$data->id}}">Bearbeiten</a></td>
         <td><a href="/file/delete/{{$data->id}}">Löschen</a></td>
         <td>{{$data->filesize/1000000}} mb</td>
