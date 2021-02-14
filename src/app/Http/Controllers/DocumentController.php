@@ -12,8 +12,10 @@ class DocumentController extends Controller
     {
 
         $file=Documents::all();
+        $filetype = $file->sortBy('filetype')->pluck('filetype')->unique();
+        $kategorie = $file->sortBy('kategorie')->pluck('kategorie')->unique();
         $file=Documents::paginate(10);
-        return view('document.view',compact('file'));
+        return view('document.view',compact('file', 'filetype', 'kategorie'));
     }
 
 
@@ -112,7 +114,11 @@ class DocumentController extends Controller
                             ->orwhere('kategorie', 'LIKE', '%'.$search_text.'%')
                             ->orwhere('filetype', 'LIKE', '%'.$search_text.'%')->get();
 
-        return view('document.search', compact('file'));
+
+         $filetype = $file->sortBy('filetype')->pluck('filetype')->unique();
+         $kategorie = $file->sortBy('kategorie')->pluck('kategorie')->unique();
+
+        return view('document.search', compact('file', 'kategorie', 'filetype'));
 
     }
 

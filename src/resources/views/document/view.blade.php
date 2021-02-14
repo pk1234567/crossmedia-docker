@@ -98,14 +98,14 @@
 <form class="form-inline" id='filter' method="GET" action=" {{ url('suche') }} ">
 <select class ="form-control filter-select" name="query" id="query" >
         <option value="" disabled selected>Nach Kategorien Filtern</option>
-       @foreach ($file as $key=>$data)
-        <option name='query' value={{ $data->kategorie }}>{{ $data->kategorie }}</option>
+       @foreach ($kategorie as $kat)
+        <option name='query' value={{ $kat }}>{{ $kat }}</option>
         @endforeach
         </select>
         <select class ="form-control filter-select" name="query" id="query" >
         <option value="" disabled selected>Nach Filetypen Filtern</option>
-       @foreach ($file as $key=>$data)
-        <option name='query' value={{ $data->filetype }}>{{ $data->filetype }}</option>
+       @foreach ($filetype as $filet)
+        <option name='query' value={{ $filet}}>{{ $filet }}</option>
         @endforeach
         </select>
         <button type="submit" class="btn btn-dark mb-2">Filtern</button>

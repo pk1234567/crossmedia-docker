@@ -92,25 +92,18 @@
 </div>
 
 <div class="container" name='filter'>
-<form class="form-inline" id='filter' method="GET">
+<form class="form-inline" id='filter' method="GET" action=" {{ url('suche') }} ">
 <select class ="form-control filter-select" name="query" id="query" >
         <option value="" disabled selected>Nach Kategorien Filtern</option>
-        <option name= "query" value="Architektur">Arschitektur</option>
-        <option name= "query" value="Landschaft">Landschaft</option>
-        <option name= "query" value="Menschen">Menschen & Gesellschaft</option>
-        <option name= "query" value="Tiere">Tiere</option>
-        <option name= "query" value="Meme">Meme</option>
-        <option name= "query" value="Sonstige">Sonstige</option>
+       @foreach ($kategorie as $kat)
+        <option name='query' value={{ $kat }}>{{ $kat }}</option>
+        @endforeach
         </select>
         <select class ="form-control filter-select" name="query" id="query" >
         <option value="" disabled selected>Nach Filetypen Filtern</option>
-        <option name= "query" value="png">.PNG</option>
-        <option name= "query" value="jpg">.JPG</option>
-        <option name= "query" value="jpeg">.JPEG</option>
-        <option name= "query" value="mp4">.MP4</option>
-        <option name= "query" value="gif">.GIF</option>
-        <option name= "query" value="pdf">.PDF</option>
-        <option name= "query" value="Sonstige">Sonstige</option>
+       @foreach ($filetype as $filet)
+        <option name='query' value={{ $filet}}>{{ $filet }}</option>
+        @endforeach
         </select>
         <button type="submit" class="btn btn-dark mb-2">Filtern</button>
         </form>
