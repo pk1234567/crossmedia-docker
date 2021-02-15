@@ -85,10 +85,14 @@
 <div class="col-12">
 <div id="column1">
     @foreach($file as $key=>$data)
+    <div style="width: 320px; height: 720px; margin-top: 3em; padding: 5%;">
+    <a href="/files/{{$data->id}}" style="display:block;position:absolute;height:320px;margin-top: 3em; padding: 5%;"></a>
     <iframe src="{{url('storage/' .$data->file)}}" style="width: 320px; height: 320px; margin-top: 3em; padding: 5%;"></iframe>
+    </div>
     @endforeach
     </div>
     </div>
+
     </div>
 </div>
 
@@ -131,6 +135,7 @@ document.getElementById('grid').style.display='none';
     document.getElementById('liste').style.display='none';
     document.getElementById('grid').style.display='block';
   }
+
 
 </script>
 
