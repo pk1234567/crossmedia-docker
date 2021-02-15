@@ -136,11 +136,11 @@ class DocumentController extends Controller
     public function downloadAsPNG($id){
         $data=Documents::find($id);
         $image = new \Imagick('storage/'.$data->file);
-        $image->transformImageColorspace(\Imagick::INTERLACE_PNG);
+        $image->setImageFormat("png");
+        header("Content-type: image/png");
         return response((string)$image, 200)
-            ->header('Content-Disposition', 'attachment; filename='.$data->file);
+            ->header('Content-Disposition', 'attachment; filename='.$data->title.'.png');
     }
-
 
     public function downloadAsGIF($id){
         $data=Documents::find($id);

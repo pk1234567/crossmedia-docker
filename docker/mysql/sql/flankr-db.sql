@@ -29,26 +29,20 @@ CREATE TABLE IF NOT EXISTS `documents` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Exportiere Daten aus Tabelle homestead.documents: ~14 rows (ungefähr)
+-- Exportiere Daten aus Tabelle homestead.documents: ~8 rows (ungefähr)
 DELETE FROM `documents`;
 /*!40000 ALTER TABLE `documents` DISABLE KEYS */;
 INSERT INTO `documents` (`id`, `title`, `description`, `file`, `filetype`, `kategorie`, `filesize`, `created_at`, `updated_at`) VALUES
-	(1, 'a', 'a', '1613398190.jpg', 'jpg', NULL, 84890, '2021-02-15 14:09:50', '2021-02-15 14:09:50'),
-	(2, 'e', 'e', '1613398221.pdf', 'pdf', NULL, 1526329, '2021-02-15 14:10:21', '2021-02-15 14:10:21'),
-	(3, 'd', 'd', '1613399096.mp4', 'mp4', NULL, 832794, '2021-02-15 14:24:56', '2021-02-15 14:24:56'),
-	(4, 'd', 'd', '1613410387.jpg', 'jpg', 'Landschaft', 95058, '2021-02-15 17:33:07', '2021-02-15 17:33:07'),
-	(5, 'd', 'd', '1613410396.jpg', 'jpg', 'Landschaft', 95058, '2021-02-15 17:33:16', '2021-02-15 17:33:16'),
-	(6, 'd', 'd', '1613410405.jpg', 'jpg', 'Landschaft', 95058, '2021-02-15 17:33:25', '2021-02-15 17:33:25'),
-	(7, 'd', 'd', '1613410412.jpg', 'jpg', 'Landschaft', 95058, '2021-02-15 17:33:32', '2021-02-15 17:33:32'),
-	(8, 'd', 'd', '1613410418.jpg', 'jpg', 'Landschaft', 95058, '2021-02-15 17:33:38', '2021-02-15 17:33:38'),
-	(9, 'd', 'd', '1613410423.jpg', 'jpg', 'Landschaft', 95058, '2021-02-15 17:33:43', '2021-02-15 17:33:43'),
-	(10, 'd', 'd', '1613410425.jpg', 'jpg', 'Landschaft', 95058, '2021-02-15 17:33:45', '2021-02-15 17:33:45'),
-	(11, 'd', 'd', '1613410426.jpg', 'jpg', 'Landschaft', 95058, '2021-02-15 17:33:46', '2021-02-15 17:33:46'),
-	(12, 'd', 'd', '1613410427.jpg', 'jpg', 'Landschaft', 95058, '2021-02-15 17:33:47', '2021-02-15 17:33:47'),
-	(13, 'd', 'd', '1613410428.jpg', 'jpg', 'Landschaft', 95058, '2021-02-15 17:33:48', '2021-02-15 17:33:48'),
-	(14, 'd', 'd', '1613410428.jpg', 'jpg', 'Landschaft', 95058, '2021-02-15 17:33:48', '2021-02-15 17:33:48');
+	(15, 'Couch', 'Unsere erste Couch', '1613427289.jpg', 'jpg', 'Architektur', 19376, '2021-02-15 22:14:49', '2021-02-15 22:14:49'),
+	(16, 'Lorem Ipsum', 'Lorem Ipsum', '1613427316.pdf', 'pdf', NULL, 34427, '2021-02-15 22:15:16', '2021-02-15 22:15:16'),
+	(20, 'Picknick', 'Pexels: Oly Kobruseeva', '1613427641.mp4', 'mp4', 'Landschaft', 4788032, '2021-02-15 22:20:41', '2021-02-15 22:20:41'),
+	(23, 'Wald', 'Pexels: Lisa Fotios', '1613428335.gif', 'gif', 'Landschaft', 934332, '2021-02-15 22:32:15', '2021-02-15 22:32:15'),
+	(24, 'Blaue Augen', 'Pexels: Luis Del Rio', '1613428371.png', 'png', 'Menschen', 1644137, '2021-02-15 22:32:51', '2021-02-15 22:32:51'),
+	(25, 'Berg', 'Pexels: Stein Egil Liland', '1613428426.jpg', 'jpg', 'Landschaft', 63017, '2021-02-15 22:33:46', '2021-02-15 22:33:46'),
+	(27, 'Noah', NULL, '1613428515.jpg', 'jpg', 'Meme', 28631, '2021-02-15 22:35:15', '2021-02-15 22:35:15'),
+	(28, 'To-Do', 'KW 10', '1613428546.txt', 'txt', 'Sonstige', 190888, '2021-02-15 22:35:46', '2021-02-15 22:35:46');
 /*!40000 ALTER TABLE `documents` ENABLE KEYS */;
 
 -- Exportiere Struktur von Tabelle homestead.failed_jobs
@@ -75,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Exportiere Daten aus Tabelle homestead.migrations: ~5 rows (ungefähr)
+-- Exportiere Daten aus Tabelle homestead.migrations: ~0 rows (ungefähr)
 DELETE FROM `migrations`;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -127,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Exportiere Daten aus Tabelle homestead.users: ~1 rows (ungefähr)
+-- Exportiere Daten aus Tabelle homestead.users: ~0 rows (ungefähr)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `avatar`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
