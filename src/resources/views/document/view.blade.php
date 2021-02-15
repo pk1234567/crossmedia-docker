@@ -106,7 +106,7 @@
             <a href="/file/download-as-png/{{$data->id}}" class="ml-2">🡣 PNG</a>
           @else
             <a href="/file/download/{{$data->file}}" class="ml-2">🡻</a>
-          @endif
+        @endif
         </td>
         <td><a href="/files/{{$data->id}}"><img src="img\eye.svg" alt="" class="assets-list__interaction" /></a></td>
         <td><a href="/file/edit/{{$data->id}}"><img src="img\edit.svg" alt="" class="assets-list__interaction" /></a></td>
@@ -199,86 +199,6 @@
       </div>
     </div>
 
-    <style>
-      .assets-grid {
-        display: flex;
-      }
-
-      /*
-      .assets-grid iframe {
-        overflow: hidden;
-      } */
-
-      .assets-grid__item-wrapper {
-        display: inline-block;
-        position: relative;
-        width: 200px;
-        height: 230px;
-        margin: 15px;
-        overflow: hidden;
-      }
-
-      .assets-grid__item-info {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        background-color: #222222cc;
-        color: #999;
-        padding: 5px;
-        font-size: 12px;
-      }
-
-      .assets-grid__item {
-        width: 100%;
-        height: auto;
-        background-color: #171717;
-      }
-
-      .assets-grid__item-title {
-        position: absolute;
-        font-size: 12px;
-        font-weight: 300;
-        color: #bbb;
-        width: 100%;
-        text-align: center;
-        margin-top: 7px;
-        bottom: 5px;
-      }
-
-      .assets-list__item {
-        opacity: .7;
-        width: 25px;
-        height: 25px;
-        position: relative;
-        display: inline-block;
-      }
-
-      .assets-list__interaction {
-        opacity: .5;
-        width: 20px;
-        height: 20px;
-        transition: .3s;
-      }
-
-    .assets-list__interaction:hover {
-        opacity: 1;
-    }
-
-      .btn-assets-format {
-        border: none;
-        background-color: #ffffff00 !important;
-        outline: none;
-        padding: 0 !important;
-        margin: 10px !important;
-      }
-
-      .btn-assets-format-icon {
-        width: 30px;
-        height: 30px;
-      }
-
-
-    </style>
 
 {{-- Was ist das? --}}
 {{-- {{ $file->links()}} --}}

@@ -26,12 +26,14 @@
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>Flankr</h3>
-        </div>
+        <a href="{{ route('view') }}">
+            <div class="sidebar-header">
+                <h3>Flankr</h3>
+                <p>Asset Manager</p>
+            </div>
+        </a>
 
         <ul class="list-unstyled components">
-            <p>Asset Manager</p>
             <li class="inactive">
                 <a href="{{ route('view') }}">Assets</a>
             </li>
