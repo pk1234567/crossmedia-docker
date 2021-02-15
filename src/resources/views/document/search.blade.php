@@ -197,10 +197,6 @@
     </div>
 
 
-    <div class="mt-4">
-        {{ $file->links()}}
-    </div>
-
 
 <script type="text/javascript">
 
