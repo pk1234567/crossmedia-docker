@@ -4,9 +4,9 @@
 
 <!-- Neues Profilbild hochladen -->
 
-<div class="container">
+<div class="container" style="margin-left: 0;">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-10">
             <img src="/uploads/avatars/{{ $user->avatar }}" 
             style="width:150px; height: 150px; float:left; 
             border-radius: 50%; margin-right: 25px;">
@@ -34,14 +34,13 @@
             value="{{ Auth::user()->email}}">
         </div>
 
-        <button type="submit" class="btn btn-dark" value="Updaten">Änderungen speichern</button>
+        <button type="submit" class="btn btn-dark" value="Updaten" style="margin-bottom: 3em">Änderungen speichern</button>
     </form>
 
 <!-- Neues Passswort vergeben -->
 
     <form enctype="multipart/form-data" action="/profil" method="POST">
         @csrf
-
         <div class="form-group">
             <label for="password"><strong>Aktuelles Passwort:</strong></label>
             <input type="password" class="form-control" id="password" name="password">
