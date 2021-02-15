@@ -67,12 +67,14 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref " style="margin-top: 300px;">
+            <img src="img\flankr-logo.JPG" style="width: 200px; height: auto; " />
+        </div>
 
 
             <div class="content">
                 <div class="title m-b-md">
-                    Flankr
+                    Asset Manager
                 </div>
 
                 <div class="links">
