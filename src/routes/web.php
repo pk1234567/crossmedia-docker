@@ -22,9 +22,11 @@ Route::put('files/edit/{id}','DocumentController@update')->name('update')->middl
 Route::post('files','DocumentController@store')->name('view')->middleware('auth');
 Route::get('files','DocumentController@index')->middleware('auth');
 Route::get('files/{id}','DocumentController@show')->middleware('auth');
+
 Route::get('/profil', 'ProfilController@index')->name('profil')->middleware('auth');
 Route::get('/store', 'ProfilController@store')->name('store')->middleware('auth');
-Route::post('/store', 'ProfilController@update_avatar');
+Route::post('/profil', 'ProfilController@update_avatar');
+
 Route::get('/suche', 'DocumentController@suche');
 Route::get('file/download/{file}','DocumentController@download');
 
@@ -43,6 +45,4 @@ Route::get('file/download-as-png/{id}', 'DocumentController@downloadAsPNG');
 Route::get('file/download-as-gif/{id}', 'DocumentController@downloadAsGIF');
 Route::get('file/download-as-jpeg/{id}', 'DocumentController@downloadAsJPEG');
 
-Route::get('/phpinfo', function() {
-    return phpinfo();
-});
+
