@@ -94,7 +94,7 @@
 
 {{ $file->links()}}
 
-<div class="container" name='filter'>
+<div class="container" name='filter' style="float: left; margin-top: 2em;">
 <form class="form-inline" id='filter' method="GET" action=" {{ url('suche') }} ">
 <select class ="form-control filter-select" name="query" id="query" >
         <option value="" disabled selected>Nach Kategorien Filtern</option>
@@ -102,15 +102,20 @@
         <option name='query' value={{ $kat }}>{{ $kat }}</option>
         @endforeach
         </select>
-        <select class ="form-control filter-select" name="query" id="query" >
-        <option value="" disabled selected>Nach Filetypen Filtern</option>
+        <select class ="form-control filter-select" name="query" id="query" style="margin-left: 1em">
+        <option value="" disabled selected >Nach Filetypen Filtern</option>
        @foreach ($filetype as $filet)
         <option name='query' value={{ $filet}}>{{ $filet }}</option>
         @endforeach
         </select>
-        <button type="submit" class="btn btn-dark mb-2">Filtern</button>
+        <button type="submit" class="btn btn-dark mb-2" style="margin-left: 1em">Filtern</button>
         </form>
         </div>
+
+        <style>
+
+
+        </style>
 
 
 <script type="text/javascript">
