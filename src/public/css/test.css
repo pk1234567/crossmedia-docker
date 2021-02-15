@@ -2,7 +2,7 @@
 @import "https://fonts.googleapis.com/css?family=Nunito:100,200,300,400,500,600,700";
 
 body {
-    font-family: 'Poppins' !important;
+    font-family: "Poppins" !important;
 }
 
 h1,
@@ -193,26 +193,27 @@ button {
     color: white !important;
 }
 
-
 .assets-grid {
     display: flex;
-  }
+    max-width: 80%;
+    flex-wrap: wrap;
+}
 
-  /*
+/*
   .assets-grid iframe {
     overflow: hidden;
   } */
 
-  .assets-grid__item-wrapper {
+.assets-grid__item-wrapper {
     display: inline-block;
     position: relative;
     width: 200px;
     height: 230px;
     margin: 15px;
     overflow: hidden;
-  }
+}
 
-  .assets-grid__item-info {
+.assets-grid__item-info {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -220,15 +221,15 @@ button {
     color: #999;
     padding: 5px;
     font-size: 12px;
-  }
+}
 
-  .assets-grid__item {
+.assets-grid__item {
     width: 100%;
     height: auto;
     background-color: #171717;
-  }
+}
 
-  .assets-grid__item-title {
+.assets-grid__item-title {
     position: absolute;
     font-size: 12px;
     font-weight: 300;
@@ -237,39 +238,39 @@ button {
     text-align: center;
     margin-top: 7px;
     bottom: 5px;
-  }
+}
 
-  .assets-list__item {
-    opacity: .7;
+.assets-list__item {
+    opacity: 0.7;
     width: 25px;
     height: 25px;
     position: relative;
     display: inline-block;
-  }
+}
 
-  .assets-list__interaction {
-    opacity: .5;
+.assets-list__interaction {
+    opacity: 0.5;
     width: 20px;
     height: 20px;
-    transition: .3s;
-  }
+    transition: 0.3s;
+}
 
 .assets-list__interaction:hover {
     opacity: 1;
 }
 
-  .btn-assets-format {
+.btn-assets-format {
     border: none;
     background-color: #ffffff00 !important;
     outline: none;
     padding: 0 !important;
     margin: 10px !important;
-  }
+}
 
-  .btn-assets-format-icon {
+.btn-assets-format-icon {
     width: 30px;
     height: 30px;
-  }
+}
 
 .sidebar-header {
     color: #e0139c !important;
