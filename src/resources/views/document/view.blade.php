@@ -5,7 +5,7 @@
 
 </body>
 
-<h2>Alle Dateien</h2>
+<h2>Alle Assets</h2>
 <p class="sub">Hier sehen Sie alle Ihre Dateien.</p>
 
 <div class="row">
@@ -126,6 +126,9 @@
             @if($data->filetype == 'jpg')
               <a href="/files/{{$data->id}}">
                 <div class="assets-grid__item-wrapper">
+                    <div class="assets-grid__item-info">
+                      {{$data->filetype}}, {{$data->filesize/1000000}} mb
+                    </div>
                     <img src="{{url('storage/' .$data->file)}}" alt="" class="assets-grid__item"/>
                   <div class="assets-grid__item-title">{{$data->title}}</div>
                 </div>
@@ -133,6 +136,9 @@
             @elseif($data->filetype == 'png')
               <a href="/files/{{$data->id}}">
                 <div class="assets-grid__item-wrapper">
+                    <div class="assets-grid__item-info">
+                      {{$data->filetype}}, {{$data->filesize/1000000}} mb
+                    </div>
                     <img src="{{url('storage/' .$data->file)}}" alt="" class="assets-grid__item"/>
                   <div class="assets-grid__item-title">{{$data->title}}</div>
                 </div>
@@ -140,6 +146,9 @@
             @elseif($data->filetype == 'gif')
               <a href="/files/{{$data->id}}">
                 <div class="assets-grid__item-wrapper">
+                    <div class="assets-grid__item-info">
+                      {{$data->filetype}}, {{$data->filesize/1000000}} mb
+                    </div>
                     <img src="{{url('storage/' .$data->file)}}" alt="" class="assets-grid__item"/>
                   <div class="assets-grid__item-title">{{$data->title}}</div>
                 </div>
@@ -213,8 +222,8 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        background-color: #22222277;
-        color: #777;
+        background-color: #222222cc;
+        color: #999;
         padding: 5px;
         font-size: 12px;
       }
@@ -245,9 +254,15 @@
       }
 
       .assets-list__interaction {
+        opacity: .5;
         width: 20px;
         height: 20px;
+        transition: .3s;
       }
+
+    .assets-list__interaction:hover {
+        opacity: 1;
+    }
 
       .btn-assets-format {
         border: none;

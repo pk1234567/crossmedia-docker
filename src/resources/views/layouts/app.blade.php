@@ -33,17 +33,17 @@
         <ul class="list-unstyled components">
             <p>Asset Manager</p>
             <li class="inactive">
-                <a href="{{ route('view') }}">Datei-Übersicht</a>
+                <a href="{{ route('view') }}">Assets</a>
             </li>
             <li class= "inactive">
                 <a href="{{ route('create') }}">Upload</a>
             </li>
-            <li class= "inactive">
+            {{-- <li class= "inactive">
                 <a href="#">Statistics</a>
-            </li>
-            <li class= "inactive">
+            </li> --}}
+            {{-- <li class= "inactive">
                 <a href="#">Settings</a>
-            </li>
+            </li> --}}
             @guest
                 <li class="inactive">
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
