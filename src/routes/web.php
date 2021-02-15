@@ -22,6 +22,7 @@ Route::put('files/edit/{id}','DocumentController@update')->name('update')->middl
 Route::post('files','DocumentController@store')->name('view')->middleware('auth');
 Route::get('files','DocumentController@index')->middleware('auth');
 Route::get('files/{id}','DocumentController@show')->middleware('auth');
+Route::get('files/meta/{file}','DocumentController@metaexport')->middleware('auth');
 
 Route::get('/profil', 'ProfilController@index')->name('profil')->middleware('auth');
 Route::get('/store', 'ProfilController@store')->name('store')->middleware('auth');

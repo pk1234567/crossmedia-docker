@@ -10,6 +10,7 @@
     <button class="btn btn-dark"><a href="/files" style="color: white">Zurück</a></button>
     <button class="btn btn-dark"><a href="/file/edit/{{$data->id}}" style="color: white">Asset bearbeiten</a></button>
     <button class="btn btn-dark"><a href="/file/download/{{$data->file}}" style="color: white">Donwload Original</a></button>
+    <button class="btn btn-dark"><a href="/file/metaexport/{{$data}}" style="color: white">Metaexport</a></button>
     <button class="btn btn-dark"><a href="/file/delete/{{$data->id}}" style="color: white">Asset löschen</a></button>
 </div>
 

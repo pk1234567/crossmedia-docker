@@ -168,5 +168,25 @@ class DocumentController extends Controller
 
         return view('document.search', compact('filetype', 'kategorie'));
     }
+
+    public function metaexport(){
+
+        $table = Documents::all();
+        $filename = "meta.csv";
+        $handle = fopen($filename, 'w+');
+        fputcsv($handle, array('title', 'description', 'filetype', 'filesize', 'created at'));
+
+        foreach($table as $row) {
+            fputcsv($handle, array($row['title'], $row['description'], $row['filetype'],$row['filesize'], $row['created_at']));
+        }
+
+        fclose($handle);
+
+        $headers = array(
+            'Content-Type' => 'text/csv',
+        );
+
+        return Response::download($filename, 'meta.csv', $headers);
+    }
 }
 
