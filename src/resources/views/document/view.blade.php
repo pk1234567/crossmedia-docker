@@ -118,11 +118,9 @@
 </div>
 
   <div class="row" id="grid">
-    <div class="col-12">
-      <div id="column1" class="assets-grid">
+    <div class="col-12 ">
+      <div class="assets-grid">
           @foreach($file as $key=>$data)
-
-
             @if($data->filetype == 'jpg')
               <a href="/files/{{$data->id}}">
                 <div class="assets-grid__item-wrapper">
